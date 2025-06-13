@@ -2,11 +2,13 @@
 
 import { useState } from "react";
 
+import { ResumeMatchResponse } from './../types/ResumeMatchResponse';
+
 
 export default function Home() {
   const [resume, setResume] = useState('');
   const [jobUrl, setjobUrl] = useState('');
-  const [matchResult, setMatchResult] = useState('');
+  const [matchResult, setMatchResult] = useState<ResumeMatchResponse | null >(null);
 
   const onSubmit = async () => {
     try {
@@ -17,10 +19,10 @@ export default function Home() {
         },
         body: JSON.stringify({ resume: resume, jobUrl: jobUrl })
       })
-      const data = await response.json();
+      const resumeMatchResult: ResumeMatchResponse = await response.json();
 
       if (response.ok) {
-        setMatchResult(data)
+        setMatchResult(resumeMatchResult)
       }
     } catch (error: any) {
       console.log("Request Failed!", error)
