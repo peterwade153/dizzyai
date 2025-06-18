@@ -1,0 +1,147 @@
+{
+    "matchScore": 75,
+    "overallSummary": "The candidate possesses a strong foundation in Python and relevant technologies, aligning well with many requirements of the Python Developer position. However, there's a need to showcase more experience in specific areas like API development and cloud technologies mentioned in the job description, and to quantify achievements with concrete data wherever possible.",
+    "strengths": [
+        {
+            "title": "Python Programming Proficiency",
+            "description": "The resume demonstrates solid expertise in Python, including various libraries and frameworks.",
+            "keywords": [
+                "Python",
+                "Django",
+                "Flask",
+                "Pandas",
+                "NumPy"
+            ]
+        },
+        {
+            "title": "Software Development Fundamentals",
+            "description": "The candidate shows a good understanding of software development principles and methodologies.",
+            "keywords": [
+                "Agile",
+                "Git",
+                "Testing",
+                "Debugging"
+            ]
+        },
+        {
+            "title": "Problem-Solving Skills",
+            "description": "The resume highlights the candidate's ability to analyze problems and develop effective solutions.",
+            "keywords": [
+                "Problem-solving",
+                "Analytical skills",
+                "Algorithm design"
+            ]
+        }
+    ],
+    "areasToAddress": [
+        {
+            "title": "API Development Experience",
+            "description": "The job description emphasizes API development, yet the resume lacks specific examples of API creation or integration.",
+            "suggestionsForImprovement": "Quantify accomplishments in previous roles by using metrics and numbers.  Add projects or work experience highlighting API development using REST, GraphQL, or similar technologies.",
+            "keywords": [
+                "API",
+                "REST",
+                "GraphQL",
+                "Microservices"
+            ]
+        },
+        {
+            "title": "Cloud Platform Experience",
+            "description": "The job description mentions cloud technologies, which are not extensively featured in the resume.",
+            "suggestionsForImprovement": "Showcase experience with cloud platforms like AWS, Azure, or GCP.  If limited experience exists, highlight familiarity and a willingness to learn.",
+            "keywords": [
+                "AWS",
+                "Azure",
+                "GCP",
+                "Cloud",
+                "Serverless"
+            ]
+        },
+        {
+            "title": "Quantifiable Achievements",
+            "description": "The resume could benefit from quantifying achievements with data to demonstrate impact.",
+            "suggestionsForImprovement": "Use metrics (e.g., percentage increase in efficiency, reduction in errors, cost savings) to demonstrate the value of contributions in previous roles.",
+            "keywords": [
+                "Metrics",
+                "Quantifiable results",
+                "KPIs"
+            ]
+        }
+    ],
+    "sectionMatches": [
+        {
+            "section": "Experience",
+            "score": 80,
+            "summary": "Good experience but lacks depth in API and cloud technologies.  More quantification needed.",
+            "highlights": [
+                "Experience with Python, Django, Flask"
+            ],
+            "gaps": [
+                "Limited exposure to specific cloud platforms and extensive API development"
+            ]
+        },
+        {
+            "section": "Skills",
+            "score": 90,
+            "summary": "Strong alignment with core Python skills.  Needs to expand cloud and API skills.",
+            "highlights": [
+                "Python",
+                "Django",
+                "Flask",
+                "SQL",
+                "Git"
+            ],
+            "gaps": [
+                "AWS",
+                "Azure",
+                "REST APIs",
+                "GraphQL"
+            ]
+        },
+        {
+            "section": "Education",
+            "score": 95,
+            "summary": "Education is relevant and well-presented.",
+            "highlights": [
+                "Bachelor's degree in Computer Science"
+            ],
+            "gaps": []
+        }
+    ],
+    "matchedKeywordsAndSkills": [
+        {
+            "keyword": "Python",
+            "resumePresence": true,
+            "jobDescriptionPresence": true,
+            "relevanceScore": 100
+        },
+        {
+            "keyword": "Django",
+            "resumePresence": true,
+            "jobDescriptionPresence": true,
+            "relevanceScore": 95
+        },
+        {
+            "keyword": "Flask",
+            "resumePresence": true,
+            "jobDescriptionPresence": true,
+            "relevanceScore": 95
+        },
+        {
+            "keyword": "AWS",
+            "resumePresence": false,
+            "jobDescriptionPresence": true,
+            "relevanceScore": 80
+        },
+        {
+            "keyword": "API Development",
+            "resumePresence": false,
+            "jobDescriptionPresence": true,
+            "relevanceScore": 70
+        }
+    ],
+    "recommendation": "REVIEW_CAREFULLY",
+    "warnings": [
+        "Resume parsing might have missed some information due to the PDF format.  Manually verify the information extracted."
+    ]
+  }

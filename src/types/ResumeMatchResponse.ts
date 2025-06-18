@@ -2,10 +2,10 @@
  * Represents a skill or keyword mentioned in either the resume or job description.
  */
 export interface SkillOrKeyword {
-    name: string; // (e.g., "TypeScript", "Agile", "Customer Service")
+    keyword: string; // (e.g., "TypeScript", "Agile", "Customer Service")
     relevanceScore?: number; // Optional: A score indicating its relevance to the overall match (0-1)
-    inResume: boolean; // True if found in the resume
-    inJobDescription: boolean; // True if found in the job description
+    resumePresence: boolean; // True if found in the resume
+    jobDescriptionPresence: boolean; // True if found in the job description
 }
 
 /**
@@ -23,17 +23,22 @@ export interface StrengthArea {
 export interface ImprovementArea {
     title: string; // e.g., "Missing Cloud Experience", "Limited Project Management"
     description: string; // Detailed explanation of the gap and why it's important for the role.
-    suggestions: string[]; // Actionable suggestions for improvement (e.g., "Highlight transferable skills", "Gain certification")
+    suggestionsForImprovement: string; // Actionable suggestions for improvement (e.g., "Highlight transferable skills", "Gain certification")
     keywords?: string[]; // Related keywords or skills that are missing or weak
 }
+
+/**
+ * The main response schema for the resume matching API interaction.
+ */
+type RecommendationAction = 'SHORTLIST' | 'REVIEW_CAREFULLY' | 'REJECT';
 
 
 /**
  * Represents a comparison of a specific resume section against the job requirements.
  */
 export interface SectionMatchDetail {
-    sectionName: string; // e.g., "Experience", "Skills", "Education", "Certifications"
-    matchScore: number; // Score for this specific section (0-100)
+    section: string; // e.g., "Experience", "Skills", "Education", "Certifications"
+    score: number; // Score for this specific section (0-100)
     summary: string; // Brief summary of the match quality for this section
     highlights?: string[]; // Key positive points in this section related to the job
     gaps?: string[]; // Key missing points or weaknesses in this section related to the job
@@ -63,10 +68,11 @@ export interface ResumeMatchResponse {
     matchedKeywordsAndSkills: SkillOrKeyword[];
   
     // Optional: A more direct and specific recommendation
-    recommendation?: {
-      action: 'SHORTLIST' | 'REVIEW_CAREFULLY' | 'REJECT';
-      reason: string; // Explanation for the recommendation
-    };
+    recommendation?: RecommendationAction | string
+    // {
+    //   action: 'SHORTLIST' | 'REVIEW_CAREFULLY' | 'REJECT';
+    //   reason: string; // Explanation for the recommendation
+    // };
   
     // Optional: Any warnings or disclaimers from the AI
     warnings?: string[];
