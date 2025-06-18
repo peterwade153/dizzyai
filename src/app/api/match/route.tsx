@@ -1,6 +1,7 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
 import { ResumeMatchResponse } from './../../../types/ResumeMatchResponse';
+import { NextResponse } from "next/server";
 
 
 interface genPayload {
@@ -15,7 +16,7 @@ export async function POST(req: Request, res: Response) {
     const jobUrl: string = data.jobUrl
 
     const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY as string)
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro" }); // to use "gemini-pro"
+    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" }); // to use "gemini-pro" // gemini-1.5-pro
 
     const prompt = `
         You are an expert HR recruiter and an AI resume matching specialist.
@@ -44,14 +45,14 @@ export async function POST(req: Request, res: Response) {
         contents: [{ role: "user", parts: [{ text: prompt }] }],
         generationConfig: {
             responseMimeType: "application/json", // This is crucial for structured output
-            maxOutputTokens: 2048 // Controls the maximum number of tokens (words + punctuation pieces) the model can generate.
+            // maxOutputTokens: 2048 // Controls the maximum number of tokens (words + punctuation pieces) the model can generate.
         },
     });
 
     const responseText = result.response.text();
     try {
         const parsedResponse: ResumeMatchResponse = JSON.parse(responseText);
-        return parsedResponse;
+        return NextResponse.json(parsedResponse)
     } catch (error) {
         console.error("Failed to parse Gemini API response:", responseText, error); 
     }
