@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 import  MatchReportCard  from './components/MatchReport';
-import { ResumeMatchResponse } from './../types/ResumeMatchResponse';
+import { ResumeMatchResponse } from '../types/ResumeMatchTypes';
 
 
 export default function Home() {

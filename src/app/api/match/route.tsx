@@ -1,17 +1,11 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
-import { ResumeMatchResponse } from './../../../types/ResumeMatchResponse';
+import { ResumeMatchResponse, GenerateContentPayload } from '../../../types/ResumeMatchTypes';
 import { NextResponse } from "next/server";
 
 
-interface genPayload {
-    resume: string;
-    jobUrl: string;
-}
-
-
 export async function POST(req: Request, res: Response) {
-    const data: genPayload = await req.json()
+    const data: GenerateContentPayload = await req.json()
     const resume: string = data.resume
     const jobUrl: string = data.jobUrl
 

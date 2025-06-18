@@ -1,6 +1,6 @@
 'use client'
 
-import { ResumeMatchResponse } from './../../types/ResumeMatchResponse';
+import { ResumeMatchResponse } from '../../types/ResumeMatchTypes';
 
 
 const MatchReportCard = (matchReport: ResumeMatchResponse) => 

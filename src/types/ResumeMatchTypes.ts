@@ -1,4 +1,12 @@
 /**
+ * Represents a payload for the request to generate content with resume and job URL mentioned.
+ */
+export interface GenerateContentPayload {
+    resume: string;
+    jobUrl: string;
+}
+
+/**
  * Represents a skill or keyword mentioned in either the resume or job description.
  */
 export interface SkillOrKeyword {
