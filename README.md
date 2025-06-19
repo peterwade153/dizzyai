@@ -1,4 +1,5 @@
 # Dizzyai
+<img src="./public/dizzy-ai.png">
 
 Expert HR and Resume matching Specialist using AI. 
 
