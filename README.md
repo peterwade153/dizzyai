@@ -34,3 +34,5 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+
+Report above is for the [Job Description](https://www.remotepython.com/jobs/b605cef4ad0040f99ec34ab49b1dccf5/) and [Resume](src/resumes/python-developer-resume-sample.pdf)

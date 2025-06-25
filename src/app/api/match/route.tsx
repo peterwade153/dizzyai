@@ -3,23 +3,20 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 import { ResumeMatchResponse, GenerateContentPayload } from '../../../types/ResumeMatchTypes';
 import { NextResponse } from "next/server";
 
+const googleGenAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY as string)
 
 export async function POST(req: Request, res: Response) {
-    const data: GenerateContentPayload = await req.json()
-    const resume: string = data.resume
-    const jobUrl: string = data.jobUrl
-
-    const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY as string)
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" }); // to use "gemini-pro" // gemini-1.5-pro
+    const payload: GenerateContentPayload = await req.json()
+    const model = googleGenAI.getGenerativeModel({ model: "gemini-1.5-flash" }); // to use "gemini-pro" // gemini-1.5-pro
 
     const prompt = `
         You are an expert HR recruiter and an AI resume matching specialist.
         Your task is to analyze a candidate's resume against a given job at given URL and provide a comprehensive match analysis in a structured JSON format.
 
         ---
-        **Job Description URL:** ${jobUrl}
+        **Job Description URL:** ${payload.jobUrl}
         ---
-        **Candidate Resume File:** ${resume}
+        **Candidate Resume File:** ${payload.resume}
 
         ---
         **Your analysis should provide the following:**
